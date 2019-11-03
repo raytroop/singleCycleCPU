@@ -3,3 +3,5 @@
 ---
 
 https://blog.csdn.net/accelerato/article/details/86546751
+
+![Drag Racing](assets/schematic.png)
