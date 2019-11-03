@@ -1,27 +1,27 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
+// Company:
+// Engineer:
+//
 // Create Date: 2018/11/28 21:07:07
-// Design Name: 
+// Design Name:
 // Module Name: ALU
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
+// Project Name:
+// Target Devices:
+// Tool Versions:
+// Description:
+//
+// Dependencies:
+//
 // Revision:
 // Revision 0.01 - File Created
 // Additional Comments:
-// 
+//
 //////////////////////////////////////////////////////////////////////////////////
 
 
 
-module ALU(X,Y,Aluc,R,Z);//ALU¥˙¬Î
+module ALU(X,Y,Aluc,R,Z);//ALU‰ª£Á†Å
 input [31:0]X,Y;
 input [1:0]Aluc;
 output [31:0]R;

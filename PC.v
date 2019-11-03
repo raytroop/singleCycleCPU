@@ -1,50 +1,50 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
+// Company:
+// Engineer:
+//
 // Create Date: 2018/11/28 22:00:56
-// Design Name: 
+// Design Name:
 // Module Name: PC
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
+// Project Name:
+// Target Devices:
+// Tool Versions:
+// Description:
+//
+// Dependencies:
+//
 // Revision:
 // Revision 0.01 - File Created
 // Additional Comments:
-// 
+//
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module PC(Clk,Reset,Result,Address);  
-input Clk;//Ê±ÖÓ
-input Reset;//ÊÇ·ñÖØÖÃµØÖ·¡£0-³õÊ¼»¯PC£¬·ñÔò½ÓÊÜĞÂµØÖ·       
+module PC(Clk,Reset,Result,Address);
+input Clk;//æ—¶é’Ÿ
+input Reset;//æ˜¯å¦é‡ç½®åœ°å€ã€‚0-åˆå§‹åŒ–PCï¼Œå¦åˆ™æ¥å—æ–°åœ°å€
 input[31:0] Result;
 output reg[31:0] Address;
 //reg[31:0] Address;
 initial begin
 Address  <= 0;
 end
-always @(posedge Clk or negedge Reset)  //½«Ê±ÖÓĞÅºÅµÄÉÏÉıÑØºÍ¿ØÖÆĞÅºÅReset×÷ÎªÃô¸Ğ±äÁ¿£¬Ê¹µÃpcÔÚÉÏÉıÑØµÄÊ±ºò·¢Éú¸Ä±ä»ò±»ÖØÖÃ¡£
-begin  
-if (!Reset) //Èç¹ûÎª0Ôò³õÊ¼»¯PC£¬·ñÔò½ÓÊÜĞÂµØÖ·
-begin  
-Address <= 0;  
-end  
-else   
+always @(posedge Clk or negedge Reset)  //å°†æ—¶é’Ÿä¿¡å·çš„ä¸Šå‡æ²¿å’Œæ§åˆ¶ä¿¡å·Resetä½œä¸ºæ•æ„Ÿå˜é‡ï¼Œä½¿å¾—pcåœ¨ä¸Šå‡æ²¿çš„æ—¶å€™å‘ç”Ÿæ”¹å˜æˆ–è¢«é‡ç½®ã€‚
 begin
-Address =  Result;  
-end  
-end  
+if (!Reset) //å¦‚æœä¸º0åˆ™åˆå§‹åŒ–PCï¼Œå¦åˆ™æ¥å—æ–°åœ°å€
+begin
+Address <= 0;
+end
+else
+begin
+Address =  Result;
+end
+end
 endmodule
 
 module PCadd4(PC_o,PCadd4);
-input [31:0] PC_o;//Æ«ÒÆÁ¿
-output [31:0] PCadd4;//ĞÂÖ¸ÁîµØÖ·
+input [31:0] PC_o;//åç§»é‡
+output [31:0] PCadd4;//æ–°æŒ‡ä»¤åœ°å€
 CLA_32 cla32(PC_o,4,0, PCadd4, Cout);
 
 endmodule

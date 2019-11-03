@@ -1,27 +1,27 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
+// Company:
+// Engineer:
+//
 // Create Date: 2018/11/28 22:09:57
-// Design Name: 
+// Design Name:
 // Module Name: INSTMEM
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
+// Project Name:
+// Target Devices:
+// Tool Versions:
+// Description:
+//
+// Dependencies:
+//
 // Revision:
 // Revision 0.01 - File Created
 // Additional Comments:
-// 
+//
 //////////////////////////////////////////////////////////////////////////////////
 
-module INSTMEM(Addr,Inst);//Ö¸Áî´æ´¢Æ÷
+module INSTMEM(Addr,Inst);//æŒ‡ä»¤å­˜å‚¨å™¨
 input[31:0]Addr;
-//input InsMemRW;//×´Ì¬Îª'0'£¬Ğ´Ö¸Áî¼Ä´æÆ÷£¬·ñÔòÎª¶ÁÖ¸Áî¼Ä´æÆ÷
+//input InsMemRW;//çŠ¶æ€ä¸º'0'ï¼Œå†™æŒ‡ä»¤å¯„å­˜å™¨ï¼Œå¦åˆ™ä¸ºè¯»æŒ‡ä»¤å¯„å­˜å™¨
 output[31:0]Inst;
 wire[31:0]Rom[31:0];
 assign Rom[5'h00]=32'h20010008;//addi $1,$0,8 $1=8
@@ -34,7 +34,7 @@ assign Rom[5'h06]=32'h14220002;//bne $1,$2,2
 assign Rom[5'h07]=32'hXXXXXXXX;
 assign Rom[5'h08]=32'hXXXXXXXX;
 assign Rom[5'h09]=32'h10220002;// beq $1,$2,2
-assign Rom[5'h0A]=32'h0800000D;// J 0D 
+assign Rom[5'h0A]=32'h0800000D;// J 0D
 assign Rom[5'h0B]=32'hXXXXXXXX;
 assign Rom[5'h0C]=32'hXXXXXXXX;
 assign Rom[5'h0D]=32'hAD02000A;// sw $2 10($8) memory[$8+10]=12
